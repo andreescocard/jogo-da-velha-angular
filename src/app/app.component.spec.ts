@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { JogoDaVelhaModule } from './jogo-da-velha';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -7,25 +10,13 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports:[
+        BrowserModule,
+        FormsModule,
+        JogoDaVelhaModule
+      ]
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'jogo-da-velha-angular'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('jogo-da-velha-angular');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('jogo-da-velha-angular app is running!');
-  });
+  
 });
