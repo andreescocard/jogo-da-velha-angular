@@ -2,11 +2,12 @@
     <h2>Jogo da velha</h2>
     
     <!-- tela inicial -->
-    <div class="principal">
-      <a href="#" 
-         class="botao">
-         Iniciar
-      </a>
+    <div class="principal" *ngIf="showInicio">
+        <a href="#" 
+        class="botao"
+        (click)="iniciarJogo()">
+        Iniciar
+        </a>
     </div><!-- fim tela inicial -->
   
     <!-- tabuleiro -->
